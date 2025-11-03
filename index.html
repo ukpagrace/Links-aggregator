@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your personal link aggregator">
+    <meta name="theme-color" content="#0e1217">
+
+    <title>My Links</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <header class="header">
+        <h1>🔗 My Links</h1>
+        <p class="subtitle">Your curated collection</p>
+    </header>
+
+    <!-- Search/Filter Bar -->
+    <div class="filter-bar">
+        <input
+                type="text"
+                id="searchInput"
+                class="search-input"
+                placeholder="🔍 Search tags... (e.g., ai, startup)"
+        >
+        <button id="clearFilter" class="btn-clear">Clear</button>
+    </div>
+
+    <!-- Tag Cloud -->
+    <div id="tagCloud" class="tag-cloud"></div>
+
+    <!-- Stats -->
+    <div id="stats" class="stats">
+        <span id="linkCount">0 links</span>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Loading your links...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="error" class="error hidden">
+        <p>⚠️ <span id="errorMessage"></span></p>
+        <button id="retryBtn" class="btn-retry">Retry</button>
+    </div>
+
+    <!-- Links Grid -->
+    <div id="linksContainer" class="links-grid"></div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="empty-state hidden">
+        <div class="empty-icon">📭</div>
+        <h2>No links yet</h2>
+        <p>Start sharing links to your Telegram channel!</p>
+    </div>
+</div>
+
+<!-- Install Prompt (PWA) -->
+<div id="installPrompt" class="install-prompt hidden">
+    <div class="install-content">
+        <span>📱 Install My Links as an app?</span>
+        <div class="install-buttons">
+            <button id="installBtn" class="btn-install">Install</button>
+            <button id="dismissBtn" class="btn-dismiss">Not now</button>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="app.js"></script>
+</body>
+</html>
